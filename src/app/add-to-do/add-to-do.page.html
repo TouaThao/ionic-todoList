@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>addToDo</ion-title>
+    <ion-icon
+      name="close"
+      slot="end"
+      size="larger"
+      class="ion-padding"
+      (click)="dismis()"
+    ></ion-icon>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-item>
+      <ion-icon name="add-circle-outline"></ion-icon>
+      <span>
+      <ion-textarea
+        [(ngModel)]="itemName"
+        placeholder="Add Task"
+      ></ion-textarea>
+    </span>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon name="add-circle-outline"></ion-icon>
+      <ion-label> Add Priority </ion-label>
+      <ion-select [(ngModel)]="itemPriority">
+        <ion-select-option value="High">High</ion-select-option>
+        <ion-select-option value="Medium">Medium</ion-select-option>
+        <ion-select-option value="Low">Low</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon name="pricetag-outline" slot="start"></ion-icon>
+      <ion-label> Category</ion-label>
+      <ion-select [(ngModel)]="itemCategory">
+        <ion-select-option value="Work">Work</ion-select-option>
+        <ion-select-option value="Personal">Personal</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Due Date </ion-label>
+      <ion-datetime
+        [(ngModel)]="itemDueDate"
+        presentation="time-date"
+        displayFormat="D MMM YYYY H:mm"
+        size="fixed"
+      ></ion-datetime>
+    </ion-item>
+    <ion-button class="ion-margin" expand="block" (click)="addTask()"
+      >Add Task</ion-button
+    >
+  </ion-card>
+</ion-content>
