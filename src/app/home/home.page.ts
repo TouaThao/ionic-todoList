@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { AlertController, ModalController } from '@ionic/angular';
+import { ModalController } from '@ionic/angular';
 import { AddToDoPage } from '../add-to-do/add-to-do.page';
 @Component({
   selector: 'app-home',
